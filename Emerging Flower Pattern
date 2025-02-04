@@ -26,13 +26,14 @@ def root(p):
 
 
 def shape():
-  for x in range(0, 50):
-     for y in range(0, 50):
+  for x in range(0, 100):
+     for y in range(0, 100):
         #thickness = root(x**2 + y**2)
+        #t.setpos
         t.color(random.choice(colors))
         t.width(0.1)
-        t.circle(10*x + 1)
-        t.right(15)
+        t.circle(x + 1/4)
+        t.left(15)
         
         
 shape()
