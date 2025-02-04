@@ -1,0 +1,49 @@
+import turtle
+import math as m
+import random
+
+colors = [
+    "black", "white", "red", "blue", "green", "yellow", "cyan", "magenta",
+    "orange", "purple", "pink", "brown", "gray", "lime", "indigo", "violet",
+    "gold", "silver", "navy", "maroon", "teal", "olive", "coral", "salmon",
+    "turquoise", "orchid", "plum", "lavender", "chocolate", "tan", "beige",
+    "khaki", "crimson", "darkgreen", "darkblue", "darkred", "darkcyan",
+    "darkmagenta", "lightblue", "lightgreen", "lightcoral", "lightsalmon",
+    "lightcyan", "lightpink", "lightgray"
+]
+
+fire_colors = [
+    "#FFFFFF", "#FFF8E7", "#FFEFD5", "#FFE4B5", "#FFD700",  # White to gold
+    "#FFC800", "#FFB700", "#FFA500", "#FF9400", "#FF8200",  # Yellow to deep orange
+    "#FF6F00", "#FF5C00", "#FF4500", "#FF2A00", "#FF1100",  # Orange to red-orange
+    "#FF0000", "#E00000", "#C80000", "#B00000", "#990000",  # Red shades
+    "#820000", "#6B0000", "#550000", "#400000", "#2A0000",  # Dark red to ember
+    "#200000", "#180000", "#100000", "#080000", "#000000"   # Fading into black
+]
+
+
+
+t=turtle.Turtle()
+coords = []
+q = 0
+#t.penup()
+
+def root(p):
+  global q
+  q +=1
+  if q > 10:
+    return
+  root(m.sqrt(p))
+
+
+def shape():
+  for x in range(0, 50):
+     for y in range(0, 50):
+        #thickness = root(x**2 + y**2)
+        t.color(random.choice(fire_colors))
+        t.width(0.1)
+        t.circle(10*x + 1)
+        t.right(15)
+        
+        
+shape()
