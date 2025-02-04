@@ -19,7 +19,7 @@ def shape():
      for y in range(-50, 50):
         #thickness = root(x**2 + y**2)
         t.width(0.1)
-        t.setpos(100*m.sin(x), 100*m.sin(y))
+        t.setpos(200*m.sin(x), 200*m.sin(y))
         t.dot("black")
         
         
