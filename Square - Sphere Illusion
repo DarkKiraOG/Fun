@@ -1,0 +1,26 @@
+import turtle
+import math as m
+
+t=turtle.Turtle()
+coords = []
+q = 0
+t.penup()
+
+def root(p):
+  global q
+  q +=1
+  if q > 10:
+    return
+  root(m.sqrt(p))
+
+
+def shape():
+  for x in range(-50, 50):
+     for y in range(-50, 50):
+        #thickness = root(x**2 + y**2)
+        t.width(0.1)
+        t.setpos(100*m.sin(x), 100*m.sin(y))
+        t.dot("black")
+        
+        
+shape()
