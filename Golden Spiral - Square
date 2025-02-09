@@ -1,0 +1,55 @@
+import turtle
+import random
+t = turtle.Turtle()
+t.speed(0)
+turtle.Screen().bgcolor("black")
+
+colors = [
+     "white", "red", "blue", "green", "yellow", "cyan", "magenta",
+    "orange", "purple", "pink", "brown", "gray", "lime", "indigo", "violet",
+    "gold", "silver", "navy", "maroon", "teal", "olive", "coral", "salmon",
+    "turquoise", "orchid", "plum", "lavender", "chocolate", "tan", "beige",
+    "khaki", "crimson", "darkgreen", "darkblue", "darkred", "darkcyan",
+    "darkmagenta", "lightblue", "lightgreen", "lightcoral", "lightsalmon",
+    "lightcyan", "lightpink", "lightgray"
+]
+
+
+
+def sq(s):
+  t.pendown()
+  for _ in range(4):
+    t.forward(s)
+    t.left(90)
+    
+r = 0.01
+step = 1
+head = t.heading()
+
+def semi():
+  global r
+  global step
+  global head
+  for i in range(10):
+    for j in range(18):
+      t.penup()
+      t.forward(r)
+      if j%18 == 0 :
+        t.fillcolor(random.choice(colors))
+        t.begin_fill()
+        sq((step**1.618)/8)
+        t.end_fill()
+      t.left(1)
+  head = t.heading()
+      
+def golden_spiral():
+  global r
+  global step
+  global head
+  for i in range(100):
+    semi()
+    r *= 1.618
+    step += 1
+    
+golden_spiral()
+      
